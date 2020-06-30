@@ -1,35 +1,38 @@
-class Personagem{
-    constructor(imagem){
-        this.imagem = imagem;
-        this.matriz = [[0, 0],
-        [220, 0],
-        [440, 0],
-        [660, 0],
-        [0, 270],
-        [220, 270],
-        [440, 270],
-        [660, 270],
-        [0, 540],
-        [220, 540],
-        [440, 540],
-        [660, 540],
-        [0, 810],
-        [220, 810],
-        [440, 810],
-        [660, 810]];
-        this.pontoAtual = 0;
+class Personagem extends Animacao{
 
+    constructor(matriz, image, x, y, larg, alt, largSprite, altSprite){
+        super(matriz, image, x, y, larg, alt, largSprite, altSprite);
+
+
+        this.valorInicial = height - alt;
+        this.y = this.valorInicial;
+        this.veloPulo = 0;
+        this.gravidade = 3;
     }
 
-    show(){
-        image(this.imagem, 0, height - 135, 110, 135, this.matriz[this.pontoAtual][0], this.matriz[this.pontoAtual][1],220, 270);
-        this.anima();
+    pula(){
+        this.veloPulo = -30;
     }
-    anima(){
-        this.pontoAtual++;
 
-        if(this.pontoAtual >= this.matriz.length - 1){
-            this.pontoAtual = 0;
+    gravity(){
+        this.y += this.veloPulo;
+        this.veloPulo += this.gravidade;
+        
+        if(this.y > this.valorInicial){
+            this.y = this.valorInicial;
         }
+    }
+   
+    colision(inimigo){  
+        const precisao = 0.65;
+        
+        
+        if (this.x + (this.larg *precisao) >= inimigo.x &&   
+            this.x <= inimigo.x + inimigo.larg &&    
+            this.y + (this.alt *precisao) >= inimigo.y &&  
+            this.y <= inimigo.y + inimigo.alt) {    
+                return true;
+        }
+        return false;
     }
 }
