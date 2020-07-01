@@ -11,7 +11,7 @@ class Personagem extends Animacao{
     }
 
     pula(){
-        this.veloPulo = -30;
+        this.veloPulo = -40;
     }
 
     gravity(){

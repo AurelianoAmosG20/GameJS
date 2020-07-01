@@ -3,6 +3,7 @@ let imagemPersonagem;
 let imagemInimigo;
 let imagemInimigoTroll;
 let imagemInimigoVoador;
+let gameOver;
 
 let cenario;
 
@@ -10,7 +11,7 @@ let personagem;
 let inimigo;
 let inimigoTroll;
 let inimigoVoador;
-
+let pontuacao;
 
 let trilhaJogo;
 let soundJump;
@@ -117,6 +118,8 @@ function preload(){
   imagemPersonagem = loadImage("/assets/imagens/personagem/correndo.png");
   imagemInimigo = loadImage("/assets/imagens/inimigos/gotinha.png");
   imagemInimigoTroll = loadImage("assets/imagens/inimigos/troll.png");
+  gameOver = loadImage("assets/imagens/assets/game-over.png");
+
   imagemInimigoVoador = loadImage("assets/imagens/inimigos/gotinha-voadora.png");
   trilhaJogo = loadSound("/assets/sons/trilha_jogo.mp3");
   soundJump = loadSound("/assets/sons/somPulo.mp3")
@@ -124,6 +127,7 @@ function preload(){
 function setup() {
   createCanvas(window.innerWidth, window.innerHeight);
   cenario = new Cenario(imagemCenario, 3);
+  pontuacao =  new Pontuacao();
   personagem = new Personagem(matrizPersonagem, imagemPersonagem, 0,30,110, 135, 220, 270);
   const inimigo = new Inimigo(matrizInimigo, imagemInimigo, window.innerWidth - 52,0, 52, 52, 104 ,104, 10,100);
   const inimigoTroll = new Inimigo(matrizInimigoTroll, imagemInimigoTroll, 0, -10, 200, 200, 400, 400, 5, 50);
@@ -151,6 +155,8 @@ function draw() {
   cenario.move();
   personagem.show();
   personagem.gravity();
+  pontuacao.show();
+  pontuacao.addPonto();
 
   
   inimigos.forEach(inimigo => {
@@ -158,7 +164,7 @@ function draw() {
       inimigo.move();
 
       if(personagem.colision(inimigo)){
-        console.log("colidiu")
+        image(gameOver, (window.innerWidth / 2 - 200), (window.innerHeight / 2));
         noLoop();
       }    
 
