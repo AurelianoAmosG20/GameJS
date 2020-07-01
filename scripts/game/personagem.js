@@ -8,18 +8,24 @@ class Personagem extends Animacao{
         this.y = this.valorInicial;
         this.veloPulo = 0;
         this.gravidade = 3;
+        this.pulos = 0;
     }
 
     pula(){
-        this.veloPulo = -40;
+        if(this.pulos <=2){
+            this.veloPulo = -40;
+            this.pulos++;
+        }
+        
     }
 
     gravity(){
         this.y += this.veloPulo;
-        this.veloPulo += this.gravidade;
+        this.veloPulo += this.gravidade*2;
         
         if(this.y > this.valorInicial){
             this.y = this.valorInicial;
+            this.pulos = 0;
         }
     }
    
