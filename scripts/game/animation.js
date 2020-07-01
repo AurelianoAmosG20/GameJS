@@ -1,12 +1,14 @@
 class Animacao{
-    constructor(matriz, image, x, y, larg, alt, largSprite, altSprite){
+    constructor(matriz, image, x, variacaoY, larg, alt, largSprite, altSprite){
+
+        this.variacaoY = variacaoY;
         //x é a posição na tela
         this.matriz = matriz;
         this.image = image;
         this.x = x;
-        this.y = y;
+        this.y = window.innerHeight - alt - this.variacaoY;
         this.larg = larg;
-        this.alt = alt;
+        this.alt = alt - this.variacaoY;
         this.largSprite = largSprite;
         this.altSprite = altSprite;
 
