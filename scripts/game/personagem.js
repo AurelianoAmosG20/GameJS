@@ -12,8 +12,8 @@ class Personagem extends Animacao{
     }
 
     pula(){
-        if(this.pulos <=2){
-            this.veloPulo = -40;
+        if(this.pulos <=3){
+            this.veloPulo = -45;
             this.pulos++;
         }
         
@@ -21,7 +21,7 @@ class Personagem extends Animacao{
 
     gravity(){
         this.y += this.veloPulo;
-        this.veloPulo += this.gravidade*2;
+        this.veloPulo += this.gravidade + 1;
         
         if(this.y > this.valorInicial){
             this.y = this.valorInicial;
