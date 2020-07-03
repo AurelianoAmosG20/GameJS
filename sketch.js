@@ -3,13 +3,14 @@ function setup() {
   jogo = new Jogo();
   jogo.setup();
   telaInicial = new TelaInicial();
+  button = new Button("Iniciar", window.innerWidth /2, window.innerHeight /2)
  
   frameRate(30);
   //trilhaJogo.loop();
-  cenaAtual = 'jogo';
+  cenaAtual = telaInicial;
   scenes = {
     jogo,
-    telainicial
+    telainicial : telaInicial
   };
 }
 
@@ -19,8 +20,8 @@ function keyPressed(){
 }
 function draw() {
   //createCanvas(window.innerWidth, window.innerHeight);
-  scenes[cenaAtual].draw();
-
+  cenaAtual.draw();
+  //telaInicial.draw();
   
 }
 

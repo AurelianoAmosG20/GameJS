@@ -3,12 +3,18 @@ let imagemPersonagem;
 let imagemInimigo;
 let imagemInimigoTroll;
 let imagemInimigoVoador;
+let imagemTelaInicial;
+let fontTelaIncial;
 let gameOver;
 let jogo;
 let cenario;
-let cenaAtual = 'tela inicial';
+let cenaAtual;
 let scenes;
 let telaInicial;
+
+
+let button;
+
 
 let personagem;
 let inimigo;

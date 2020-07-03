@@ -1,7 +1,26 @@
+@font-face{
+  src: url(/assets/fonteTelaInicial.otf);
+  font-family: font-jogo;
+}
 html, body {
   margin: 0;
   padding: 0;
 }
 canvas {
   display: block;
+}
+
+.button-inicial{
+  font-size: 40pt;
+  padding: 10px 20px 10px 20px;
+  background-color: blue;
+  border: none;
+  border-radius: 8px;
+  color: #ffffff;
+  font-family: font-jogo;
+  margin-top: 200px;
+}
+
+.button-inicial:hover{
+  background-color: rgb(111, 111, 189);
 }
