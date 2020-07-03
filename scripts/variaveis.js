@@ -4,8 +4,11 @@ let imagemInimigo;
 let imagemInimigoTroll;
 let imagemInimigoVoador;
 let gameOver;
-
+let jogo;
 let cenario;
+let cenaAtual = 'tela inicial';
+let scenes;
+let telaInicial;
 
 let personagem;
 let inimigo;

@@ -1,0 +1,12 @@
+
+function preload(){
+    imagemCenario = loadImage("/assets/imagens/cenario/floresta.png");
+    imagemPersonagem = loadImage("/assets/imagens/personagem/correndo.png");
+    imagemInimigo = loadImage("/assets/imagens/inimigos/gotinha.png");
+    imagemInimigoTroll = loadImage("assets/imagens/inimigos/troll.png");
+    gameOver = loadImage("assets/imagens/assets/game-over.png");
+  
+    imagemInimigoVoador = loadImage("assets/imagens/inimigos/gotinha-voadora.png");
+    trilhaJogo = loadSound("/assets/sons/trilha_jogo.mp3");
+    soundJump = loadSound("/assets/sons/somPulo.mp3")
+  }
