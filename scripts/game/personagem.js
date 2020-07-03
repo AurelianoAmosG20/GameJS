@@ -9,6 +9,7 @@ class Personagem extends Animacao{
         this.veloPulo = 0;
         this.gravidade = 3;
         this.pulos = 0;
+        this.invencivel = false;
     }
 
     pula(){
@@ -28,9 +29,20 @@ class Personagem extends Animacao{
             this.pulos = 0;
         }
     }
-   
+    
+    invenc(){
+        this.invencivel = true;
+        setTimeout(() =>{
+            this.invencivel =  false;
+        }, 1000);
+    }
+
     colision(inimigo){  
         const precisao = 0.65;
+
+        if(this.invencivel){
+            return false;
+        }
         
         
         if (this.x + (this.larg *precisao) >= inimigo.x &&   

@@ -11,10 +11,10 @@ let cenario;
 let cenaAtual;
 let scenes;
 let telaInicial;
-
+let imagemVida;
 
 let button;
-
+let vida;
 
 let personagem;
 let inimigo;
