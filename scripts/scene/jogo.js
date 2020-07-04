@@ -19,7 +19,7 @@ class Jogo{
     keyPressed(key){
         if(key === "ArrowUp"){
             personagem.pula();
-            //soundJump.play();
+            soundJump.play();
         }
     }
 
@@ -42,10 +42,12 @@ class Jogo{
 
         if(inimigoVisivel){
             this.inimigoAtual++;
-            if(inimigoAtual > 2){
-            inimigoAtual = 0;
+            console.log("foi")
+            if(this.inimigoAtual == 3){
+                this.inimigoAtual = parseInt(random(0,3));
+                
             }
-            inimigo.velocidade = parseInt(random(10,20));
+            inimigo.velocidade = parseInt(random(10,15));
         }
 
         if(personagem.colision(inimigo)){
@@ -63,3 +65,8 @@ class Jogo{
 
     }
 }
+
+
+
+
+///https://github.com/imersao-gamedev/certificado

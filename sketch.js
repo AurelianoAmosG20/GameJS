@@ -6,7 +6,7 @@ function setup() {
   button = new Button("Iniciar", window.innerWidth /2, window.innerHeight /2)
  
   frameRate(30);
-  //trilhaJogo.loop();
+  trilhaJogo.loop();
   cenaAtual = telaInicial;
   scenes = {
     jogo,

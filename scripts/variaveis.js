@@ -123,4 +123,4 @@ const matrizInimigoVoador = [
   [0, 750],
 ];
 
-const inimigos = [];
+var inimigos = [];
