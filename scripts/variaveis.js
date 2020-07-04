@@ -1,32 +1,32 @@
+/*imagens*/
 let imagemCenario;
 let imagemPersonagem;
 let imagemInimigo;
 let imagemInimigoTroll;
 let imagemInimigoVoador;
 let imagemTelaInicial;
-let fontTelaIncial;
 let gameOver;
+let telaInicial;
+let imagemVida;
+/*fontes*/
+let fontTelaIncial;
+/*variáveis de controle*/
 let jogo;
 let cenario;
 let cenaAtual;
 let scenes;
-let telaInicial;
-let imagemVida;
-
 let button;
 let vida;
-
 let personagem;
 let inimigo;
 let inimigoTroll;
 let inimigoVoador;
 let pontuacao;
-
 let inimigoAtual = 0;
-
+/*sons*/
 let trilhaJogo;
 let soundJump;
-
+/*matrizes*/
 const matrizPersonagem = [[0, 0],
 [220, 0],
 [440, 0],
